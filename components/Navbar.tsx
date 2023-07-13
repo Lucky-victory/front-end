@@ -4,13 +4,20 @@ import { FaWallet } from 'react-icons/fa';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css';
 import { useRouter } from 'next/router';
-function Navbar() {
+function Navbar({ bg = '', color = '#fff' }) {
     const router = useRouter();
     const path = router.asPath;
     const navLinks = ['explore', 'create', 'history'];
 
     return (
-        <Flex as="nav" py={2} px={4} className={styles.navbar}>
+        <Flex
+            as="nav"
+            py={2}
+            px={4}
+            className={styles.navbar}
+            bg={bg}
+            color={color}
+        >
             <Box as="span" fontSize="2xl" fontWeight="bold">
                 Cross
             </Box>

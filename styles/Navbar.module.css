@@ -3,14 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    position: sticky;
+    position: fixed;
     top: 0;
     width: 100%;
-    color: #fff;
+
     left: 0;
     backdrop-filter: blur(10px);
     z-index: 10;
-    background: rgba(0, 0, 0, 0.75);
+
     /* background: linear-gradient(
         to left,
         #fc1e4d,
@@ -18,7 +18,7 @@
         #491edf,
         #261710,
         #4d0e93
-    ); */
+        ); */
 
     height: var(--navbar-height);
 }

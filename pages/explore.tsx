@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
 import styles from '../styles/Explore.module.css';
-import { Image } from '@chakra-ui/react';
+import { Image, Heading } from '@chakra-ui/react';
 
 const collectionsData = [
     {
@@ -40,9 +40,11 @@ const collectionsData = [
 const Explore = () => {
     return (
         <div>
-            <Navbar />
-            <div className="container">
-                <h1>Explore Collections</h1>
+            <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
+            <div className={styles['container']}>
+                <Heading textAlign={'center'} mt={6} mb={6}>
+                    Explore Collections
+                </Heading>
                 <div className={styles['collection-list']}>
                     {collectionsData.map((collection) => (
                         <Link

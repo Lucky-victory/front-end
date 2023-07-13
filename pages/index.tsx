@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             <Navbar />
             <main>
                 <Hero />
-                <Button>Heloo</Button>
+              
             </main>
 
             <footer className={styles.footer}>

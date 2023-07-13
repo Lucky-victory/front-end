@@ -1,23 +1,28 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
-import { Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Button,
+    Flex,
+    Heading,
+    Image as CHUIImage,
+    Text,
+} from '@chakra-ui/react';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import styles from '../styles/Hero.module.css';
+import Image from 'next/image';
 const Hero = () => {
     return (
         <>
             <Box
                 className={styles.hero}
-                bgImage={`url(/dark.jpg)`}
-                // bgImage={
-                //     'linear-gradient(to left, #FC1E4D, #7C22DA, #491EDF, #261710, #4D0E93)'
-                // }
+                bgImage={`url(/bg.jpg)`}
                 bgSize="cover"
                 bgPosition="center"
                 height="100vh"
-                position="relative"
+                minH={600}
             >
                 <Flex
                     height="100%"
@@ -26,7 +31,7 @@ const Hero = () => {
                     px={8}
                     py={16}
                 >
-                    <Box maxW="md" color="white" mr={8}>
+                    <Box maxW="md" color="white" mr={8} zIndex={3}>
                         <Heading
                             as="h1"
                             size="4xl"
@@ -89,19 +94,17 @@ const Hero = () => {
                             <Box
                                 position="relative"
                                 display="inline-block"
-                                overflow="hidden"
-                                boxShadow="0 0 10px rgba(0, 0, 0, 0.2)"
-                                filter="blur(1px)"
+                                // overflow="hidden"
                                 width="100%"
                                 height="100%"
+                                maxH={600}
                             >
-                                <Image
-                                    src={'/element.jpeg'}
+                                <CHUIImage
+                                    src={'/nft-trans.png'}
                                     alt="Hero Image"
-                                    borderRadius="125px"
                                     width="100%"
                                     height="100%"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                 />
                             </Box>
                         </motion.div>
