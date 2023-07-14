@@ -41,6 +41,8 @@ const Hero = () => {
                         >
                             <Typewriter
                                 options={{
+                                    wrapperClassName:
+                                        styles['type-writer-text'],
                                     strings: ['Buy, sell and collect NFTs'],
                                     autoStart: true,
                                     loop: true,
@@ -94,7 +96,7 @@ const Hero = () => {
                             <Box
                                 position="relative"
                                 display="inline-block"
-                                // overflow="hidden"
+                                overflow="hidden"
                                 width="100%"
                                 height="100%"
                                 maxH={600}

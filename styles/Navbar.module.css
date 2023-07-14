@@ -66,3 +66,7 @@ a.nav-link:hover {
     font-family: 'Comic Sans MS', cursive;
     font-size: 14px;
 }
+.connect-btn-wrap button {
+    --rk-radii-connectButton: 50px;
+    --rk-colors-accentColor: var(--chakra-colors-teal-400);
+}

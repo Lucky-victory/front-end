@@ -1,9 +1,10 @@
 import React from 'react';
-import { ChakraProvider, Box, Flex, Button } from '@chakra-ui/react';
+import { Box, Flex, Button } from '@chakra-ui/react';
 import { FaWallet } from 'react-icons/fa';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css';
 import { useRouter } from 'next/router';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 function Navbar({ bg = '', color = '#fff' }) {
     const router = useRouter();
     const path = router.asPath;
@@ -64,9 +65,12 @@ function Navbar({ bg = '', color = '#fff' }) {
                     </Link>
                 ))}
 
-                <Box ml={4} cursor="pointer">
+                <Box mr={4} ml={4} cursor="pointer">
                     <FaWallet size={24} />
                 </Box>
+                <div className={styles['connect-btn-wrap']}>
+                    <ConnectButton />
+                </div>
             </Box>
         </Flex>
     );
