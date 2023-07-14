@@ -6,6 +6,8 @@ import {
     FormLabel,
     Heading,
     Input,
+    Select,
+    SelectField,
     Text,
     Textarea,
 } from '@chakra-ui/react';
@@ -73,6 +75,24 @@ const CreatePage = () => {
                         // _focusVisible={{ borderColor: 'teal.600' }}
                         _focus={{ borderColor: 'teal.600' }}
                     />
+                    <FormLabel mt={4} htmlFor="blockchain-inp">
+                        BlockChain
+                        {/* <Text as={'span'} color={'red.500'}>
+                            *
+                        </Text> */}
+                    </FormLabel>
+
+                    <Select
+                        minH={12}
+                        _focus={{ borderColor: 'teal.600' }}
+                        id="blockchain-inp"
+                    >
+                        <option disabled selected>
+                            Select Chain
+                        </option>
+                        <option>opt 1</option>
+                        <option>opt 2</option>
+                    </Select>
                     <Button
                         type="submit"
                         color={'white'}

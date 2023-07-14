@@ -26,6 +26,7 @@ const Footer = () => {
                             as="h4"
                             className="logo"
                             size="md"
+                            display={'inline-block'}
                         >
                             <Link href={'/'}>Cross</Link>
                         </Heading>
