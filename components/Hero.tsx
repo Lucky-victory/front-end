@@ -21,13 +21,14 @@ const Hero = () => {
                 bgImage={`url(/bg.jpg)`}
                 bgSize="cover"
                 bgPosition="center"
-                height="100vh"
+                minHeight="100vh"
                 minH={600}
             >
                 <Flex
                     height="100%"
                     alignItems="center"
                     justifyContent="space-around"
+                    className={styles['hero-inner']}
                     px={8}
                     py={16}
                 >
@@ -54,22 +55,23 @@ const Hero = () => {
                             cross-chain transactions of crypto collectibles and
                             NFTs.
                         </Text>
-                        {/* <Link href={'/create'}> */}
-                        {/* </Link> */}
-                        <Button
-                            colorScheme="teal"
-                            mr={6}
-                            fontSize="xl"
-                            bgGradient="linear(to-r, teal.500, teal.400)"
-                            _hover={{
-                                bgGradient: 'linear(to-r, teal.600, teal.500)',
-                            }}
-                            px={7}
-                            py={6}
-                            borderRadius={50}
-                        >
-                            Upload
-                        </Button>
+                        <Link href={'/create'}>
+                            <Button
+                                colorScheme="teal"
+                                mr={6}
+                                fontSize="xl"
+                                bgGradient="linear(to-r, teal.500, teal.400)"
+                                _hover={{
+                                    bgGradient:
+                                        'linear(to-r, teal.600, teal.500)',
+                                }}
+                                px={7}
+                                py={6}
+                                borderRadius={50}
+                            >
+                                Upload
+                            </Button>
+                        </Link>
 
                         <Link href="/explore">
                             <Button
@@ -96,10 +98,11 @@ const Hero = () => {
                             <Box
                                 position="relative"
                                 display="inline-block"
-                                overflow="hidden"
+                                // overflow="hidden"
                                 width="100%"
                                 height="100%"
-                                maxH={600}
+                                maxH={650}
+                                mb={4}
                             >
                                 <CHUIImage
                                     src={'/nft-trans.png'}

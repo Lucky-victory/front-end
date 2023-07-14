@@ -1,18 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import {
-   Box,
-   Button,
-   FormControl,
-   FormLabel,
-   Input,
-   Text,
-   Textarea,
-} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
-const HistoryPage=()=>{
-   return <>
-   
-   <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
+import Footer from '../components/Footer';
+const HistoryPage = () => {
+    return (
+        <div className={'page'}>
+            <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
             <Box
                 mt={'calc(2rem + var(--navbar-height))'}
                 maxW={800}
@@ -20,9 +13,12 @@ const HistoryPage=()=>{
                 mr={'auto'}
                 pt={8}
             >
-History Page
-</Box>
-   </>
-}
+                History Page
+            </Box>
 
-export default HistoryPage
+            <Footer />
+        </div>
+    );
+};
+
+export default HistoryPage;

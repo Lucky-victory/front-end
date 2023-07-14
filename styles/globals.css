@@ -15,3 +15,7 @@ a {
 * {
     box-sizing: border-box;
 }
+.page {
+    max-width: 1350px;
+    margin: 0 auto;
+}

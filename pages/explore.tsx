@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
-
 import styles from '../styles/Explore.module.css';
 import { Image, Heading } from '@chakra-ui/react';
+import Footer from '../components/Footer';
 
 const collectionsData = [
     {
@@ -40,7 +40,7 @@ const collectionsData = [
 
 const Explore = () => {
     return (
-        <div>
+        <div className="page">
             <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
             <div className={styles['container']}>
                 <Heading textAlign={'center'} mt={6} mb={6}>
@@ -69,6 +69,7 @@ const Explore = () => {
                     ))}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

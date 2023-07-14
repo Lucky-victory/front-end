@@ -1,13 +1,12 @@
-import { ConnectButton } from '@rainbow-me/rainbowkit';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { Button, Box, Heading, Text } from '@chakra-ui/react';
 import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 const Home: NextPage = () => {
     return (
-        <div className={styles.container}>
+        <div className="page">
             <Head>
                 <title>Cross</title>
                 <meta
@@ -19,44 +18,9 @@ const Home: NextPage = () => {
             <Navbar />
             <main>
                 <Hero />
-              
             </main>
 
-            <footer className={styles.footer}>
-                <Box
-                    className="footer-container"
-                    bottom={0}
-                    left={0}
-                    width="100%"
-                    py={4}
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-                >
-                    <Box className="footer-content">
-                        <Box className="logo-container">
-                            <Heading as="h4" className="logo" size="md">
-                                Router
-                                <span className="logo-highlight">Protocol</span>
-                            </Heading>
-                        </Box>
-                        <Box className="subscribe-form">
-                            <Text className="subtitle">
-                                Join us and never miss out on our Latest
-                                Updates.
-                            </Text>
-                            <form action="">
-                                <input
-                                    type="text"
-                                    className="email-input"
-                                    placeholder="Enter your email"
-                                />
-                                <button className="subscribe-button">
-                                    Subscribe
-                                </button>
-                            </form>
-                        </Box>
-                    </Box>
-                </Box>
-            </footer>
+            <Footer />
         </div>
     );
 };

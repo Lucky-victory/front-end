@@ -6,8 +6,10 @@
     position: fixed;
     top: 0;
     width: 100%;
+    max-width: 1450px;
 
-    left: 0;
+    left: 50%;
+    transform: translate(-50%);
     backdrop-filter: blur(10px);
     z-index: 10;
 
