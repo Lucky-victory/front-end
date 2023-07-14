@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
+
 import styles from '../styles/Explore.module.css';
 import { Image, Heading } from '@chakra-ui/react';
 
