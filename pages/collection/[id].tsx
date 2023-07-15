@@ -1,11 +1,15 @@
+import { Box } from '@chakra-ui/react';
+import Footer from '../../components/Footer';
 import Navbar from '../../components/Navbar';
 
 const CollectionViewPage = () => {
     return (
         <div className="page">
             <Navbar />
-
-            <div className="">collection view</div>
+            <Box mt={'calc(2rem + var(--navbar-height))'} minH={400}>
+                <div className="">collection view</div>
+            </Box>
+            <Footer />
         </div>
     );
 };

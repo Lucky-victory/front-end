@@ -72,21 +72,20 @@ a.nav-link:hover {
     z-index: 5;
 }
 @media all and (max-width: 789px) {
-    .navbar {
-        display: block;
-    }
     .navbar-links {
         flex-direction: column;
         position: fixed;
         height: 100vh;
-        min-width: 50%;
+        /* min-width: 50%; */
+        min-width: 300px;
         top: 0;
         right: 0;
-        transition: transform 0.75s ease-in-out;
+        transition: transform 0.75s ease-out;
         background: rgba(255, 255, 255, 0.95);
         align-items: center;
         justify-content: start;
         padding-top: 4rem;
+        padding-right: unset;
         overflow-y: auto;
         transform: translateX(999px);
         z-index: -2;

@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Flex, Button, Heading } from '@chakra-ui/react';
-import {
-    FaBars,
-    FaCross,
-    FaHamburger,
-    FaTimes,
-    FaWallet,
-} from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css';
 import { useRouter } from 'next/router';
@@ -86,20 +80,21 @@ function Navbar({ bg = '' }) {
                         <ConnectButton />
                     </div>
                 </Box>
-                <Button
-                    p={'0.25rem'}
-                    mr={2}
-                    color={'inherit'}
-                    bg={'transparent'}
-                    borderRadius={50}
-                    h={'40px'}
-                    w={'40px'}
-                    _hover={{ bg: 'teal.300' }}
-                    className={styles['menu-toggle']}
-                    onClick={() => toggleMenu()}
-                >
-                    {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                </Button>
+                <Box className={styles['menu-toggle']}>
+                    <Button
+                        p={'0.25rem'}
+                        mr={2}
+                        color={'inherit'}
+                        bg={'transparent'}
+                        borderRadius={50}
+                        h={'40px'}
+                        w={'40px'}
+                        _hover={{ bg: 'teal.300' }}
+                        onClick={() => toggleMenu()}
+                    >
+                        {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+                    </Button>
+                </Box>
             </Flex>
         </Flex>
     );
