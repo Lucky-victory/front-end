@@ -19,7 +19,7 @@ const Footer = () => {
                 bg={'gray.200'}
                 minH={300}
             >
-                <Flex className="footer-content" justify={'space-between'}>
+                <Flex className={styles['footer-content']} justify={'space-between'}>
                     <Box className="logo-container">
                         <Heading
                             _hover={{ color: 'teal.400' }}
