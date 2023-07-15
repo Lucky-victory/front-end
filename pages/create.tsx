@@ -53,7 +53,7 @@ const CreatePage = () => {
     }
     return (
         <div className="page">
-            <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
+            <Navbar/>
             <Box
                 mt={'calc(2rem + var(--navbar-height))'}
                 maxW={800}

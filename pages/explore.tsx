@@ -41,7 +41,7 @@ const collectionsData = [
 const Explore = () => {
     return (
         <div className="page">
-            <Navbar bg={'rgba(255,255,255,0.75)'} color={'#6d7575 '} />
+            <Navbar  />
             <div className={styles['container']}>
                 <Heading textAlign={'center'} mt={6} mb={6}>
                     Explore Collections

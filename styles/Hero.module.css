@@ -15,12 +15,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.hero-inner{
-    
-}
-@media all and (max-width:728px) {
-    .hero-inner{
-        
+
+@media all and (max-width: 768px) {
+    .hero-inner {
         flex-wrap: wrap;
     }
 }
