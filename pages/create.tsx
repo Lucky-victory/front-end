@@ -7,17 +7,49 @@ import {
     Heading,
     Input,
     Select,
-    SelectField,
     Text,
     Textarea,
 } from '@chakra-ui/react';
 import Navbar from '../components/Navbar';
 import ImageDropArea from '../components/ImageDropArea';
 import Footer from '../components/Footer';
+import { Web3Storage } from 'web3.storage';
+import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from 'react';
+
+// Construct with token and endpoint
+const apiToken = process.env.NEXT_PUBLIC_WEB3_STORAGE_TOKEN as string;
+const client = new Web3Storage({ token: apiToken });
 
 const CreatePage = () => {
-    function onUploadChange(hasImage: boolean) {
+    const [files, setFiles] = useState<File[]>([]);
+    const [fields, setFields] = useState({
+        name: '',
+        description: '',
+        blockchain: '',
+    });
+    function onUploadChange(hasImage: boolean, files: File[]) {
         console.log({ hasImage });
+        setFiles(files);
+    }
+    async function handleFormSubmit(evt: FormEvent<HTMLDivElement>) {
+        evt.preventDefault();
+
+        try {
+            const cid = await client.put(files, { name: fields.name });
+            console.log({ cid });
+        } catch (error) {
+            console.log('error', error);
+        }
+    }
+    function handleInputChange(
+        evt: ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+    ) {
+        const target = evt.target;
+        const { name, value } = target;
+        setFields((prev) => ({ ...prev, [name]: value }));
+        console.log(fields);
     }
     return (
         <div className="page">
@@ -33,7 +65,10 @@ const CreatePage = () => {
                 <Heading textAlign={'center'} mt={8} mb={8}>
                     Create
                 </Heading>
-                <FormControl as={'form'}>
+                <FormControl
+                    onSubmit={(evt) => handleFormSubmit(evt)}
+                    as={'form'}
+                >
                     <FormLabel htmlFor="image-select">
                         Image
                         <Text as={'span'} color={'red.500'}>
@@ -54,7 +89,10 @@ const CreatePage = () => {
                     </FormLabel>
                     <Input
                         required
+                        value={fields.name}
                         minH={12}
+                        name="name"
+                        onChange={handleInputChange}
                         id="name-inp"
                         placeholder="Item name"
                         mb={4}
@@ -68,8 +106,10 @@ const CreatePage = () => {
                         page underneath its image.
                     </Text>
                     <Textarea
+                        onChange={handleInputChange}
                         placeholder="Provide a detailed description of your item"
                         minH={32}
+                        name="description"
                         id="desc"
                         resize={'none'}
                         // _focusVisible={{ borderColor: 'teal.600' }}
@@ -83,6 +123,8 @@ const CreatePage = () => {
                     </FormLabel>
 
                     <Select
+                        onChange={handleInputChange}
+                        name="blockchain"
                         minH={12}
                         _focus={{ borderColor: 'teal.600' }}
                         id="blockchain-inp"

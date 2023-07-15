@@ -4,23 +4,24 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Accept, useDropzone } from 'react-dropzone';
 import { FaTrash } from 'react-icons/fa';
 function ImageDropArea({
-    onUploadChange = (hasImage: boolean) => {},
+    onUploadChange = (hasImage: boolean,files:File[]) => {},
 }) {
-    const [files, setFiles] = useState([]);
+    const [files, setFiles] = useState<File[]>([]);
     function genID() {
         return Math.random().toString(16).substring(2);
     }
 
     const [images, setImages] = useState<
-        Array<{ id: string; src: string | ArrayBuffer | null }>
+        Array<{ id: string;index:number, src: string | ArrayBuffer | null }>
     >([]);
     const onDrop = useCallback((acceptedFiles: File[]) => {
+        setFiles((prev)=>[...prev,...acceptedFiles])
         acceptedFiles.map((file, index) => {
             const reader = new FileReader();
             reader.onload = function (e) {
                 setImages((prevState) => [
                     ...prevState,
-                    { id: genID(), src: e.target && e.target.result },
+                    { id: genID(),index, src: e.target && e.target.result },
                 ]);
             };
             reader.readAsDataURL(file);
@@ -29,20 +30,23 @@ function ImageDropArea({
     }, []);
 
     useEffect(() => {
-        onUploadChange(images.length > 0);
-    }, [images, onUploadChange]);
+        onUploadChange(images.length > 0,files);
+    }, [images, onUploadChange,files]);
     const { getRootProps, getInputProps } = useDropzone({
         accept: { 'image/*': ['.jpeg', '.png', '.jpg', '.svg', '.gif'] },
         onDrop,
         maxFiles: 1,
     });
     function removeImage(image: {
-        id: string;
+        id: string;index:number,
         src: string | ArrayBuffer | null;
     }) {
         let _images = [...images];
+        let _files = [...files];
+        _files=_files.filter((f,i)=>i!==image.index)
         _images = _images.filter((img) => img.id !== image.id);
         setImages(_images);
+        setFiles(_files)
     }
 
     return (
