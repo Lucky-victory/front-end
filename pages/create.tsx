@@ -15,7 +15,7 @@ import ImageDropArea from '../components/ImageDropArea';
 import Footer from '../components/Footer';
 import { Web3Storage } from 'web3.storage';
 import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from 'react';
-
+import Head from 'next/head'
 // Construct with token and endpoint
 const apiToken = process.env.NEXT_PUBLIC_WEB3_STORAGE_TOKEN as string;
 const client = new Web3Storage({ token: apiToken });
@@ -53,7 +53,15 @@ const CreatePage = () => {
     }
     return (
         <div className="page">
-            <Navbar/>
+            <Head>
+                <title>Create</title>
+                <meta
+                    content="Cross | Buy, Sell and Collect NFTs"
+                    name="description"
+                />
+                <link href="/favicon.ico" rel="icon" />
+            </Head>
+            <Navbar />
             <Box
                 mt={'calc(2rem + var(--navbar-height))'}
                 maxW={800}

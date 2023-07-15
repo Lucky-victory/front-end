@@ -22,15 +22,15 @@ const Hero = () => {
                 bgSize="cover"
                 bgPosition="center"
                 minHeight="100vh"
-                minH={600}
             >
                 <Flex
-                    height="100%"
-                    alignItems="center"
+                    // height="100%"
+                    // alignItems="center"
                     justifyContent="space-around"
                     className={styles['hero-inner']}
                     px={8}
-                    py={16}
+                    mt={8}
+                    // py={8}
                 >
                     <Box maxW="md" color="white" mr={8} zIndex={3}>
                         <Heading

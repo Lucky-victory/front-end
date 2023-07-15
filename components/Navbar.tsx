@@ -87,8 +87,8 @@ function Navbar({ bg = '' }) {
                         color={'inherit'}
                         bg={'transparent'}
                         borderRadius={50}
-                        h={'40px'}
-                        w={'40px'}
+                        h={'48px'}
+                        w={'48px'}
                         _hover={{ bg: 'teal.300' }}
                         onClick={() => toggleMenu()}
                     >

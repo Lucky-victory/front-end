@@ -4,7 +4,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { Accept, useDropzone } from 'react-dropzone';
 import { FaTrash } from 'react-icons/fa';
 function ImageDropArea({
-    onUploadChange = (hasImage: boolean,files:File[]) => {},
+    onUploadChange = (hasImage: boolean, files: File[]) => {},
 }) {
     const [files, setFiles] = useState<File[]>([]);
     function genID() {
@@ -12,16 +12,16 @@ function ImageDropArea({
     }
 
     const [images, setImages] = useState<
-        Array<{ id: string;index:number, src: string | ArrayBuffer | null }>
+        Array<{ id: string; index: number; src: string | ArrayBuffer | null }>
     >([]);
     const onDrop = useCallback((acceptedFiles: File[]) => {
-        setFiles((prev)=>[...prev,...acceptedFiles])
+        setFiles((prev) => [...prev, ...acceptedFiles]);
         acceptedFiles.map((file, index) => {
             const reader = new FileReader();
             reader.onload = function (e) {
                 setImages((prevState) => [
                     ...prevState,
-                    { id: genID(),index, src: e.target && e.target.result },
+                    { id: genID(), index, src: e.target && e.target.result },
                 ]);
             };
             reader.readAsDataURL(file);
@@ -30,23 +30,24 @@ function ImageDropArea({
     }, []);
 
     useEffect(() => {
-        onUploadChange(images.length > 0,files);
-    }, [images, onUploadChange,files]);
+        onUploadChange(images.length > 0, files);
+    }, [images, onUploadChange, files]);
     const { getRootProps, getInputProps } = useDropzone({
         accept: { 'image/*': ['.jpeg', '.png', '.jpg', '.svg', '.gif'] },
         onDrop,
         maxFiles: 1,
     });
     function removeImage(image: {
-        id: string;index:number,
+        id: string;
+        index: number;
         src: string | ArrayBuffer | null;
     }) {
         let _images = [...images];
         let _files = [...files];
-        _files=_files.filter((f,i)=>i!==image.index)
+        _files = _files.filter((f, i) => i !== image.index);
         _images = _images.filter((img) => img.id !== image.id);
         setImages(_images);
-        setFiles(_files)
+        setFiles(_files);
     }
 
     return (
@@ -76,7 +77,9 @@ function ImageDropArea({
                     h={'100%'}
                     w={'100%'}
                 >
-                    <Text casing={'uppercase'}>JPG,PNG,GIF,SVG</Text>
+                    <Text as={'span'} casing={'uppercase'}>
+                        JPG,PNG,GIF,SVG
+                    </Text>
                 </Text>
             </LinkBox>
             <Box mb={8}>

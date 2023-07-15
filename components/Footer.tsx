@@ -49,7 +49,7 @@ const Footer = () => {
                             Updates.
                         </Text>
                         <FormControl as={'form'}>
-                            <Flex w={500} maxW={'100%'}>
+                            <Flex maxW={500} w={'100%'}>
                                 <Input
                                     required
                                     borderColor={'gray.400'}

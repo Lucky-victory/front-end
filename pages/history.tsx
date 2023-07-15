@@ -32,6 +32,7 @@ const HistoryPage = () => {
         <div className={'page'}>
             <Navbar />
             <Box
+                px={6}
                 minH={450}
                 mt={'calc(2rem + var(--navbar-height))'}
                 maxW={800}
