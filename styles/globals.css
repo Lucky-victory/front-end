@@ -18,4 +18,5 @@ a {
 .page {
     max-width: 1350px;
     margin: 0 auto;
+    width: 100%;
 }

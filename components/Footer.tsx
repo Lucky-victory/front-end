@@ -19,7 +19,10 @@ const Footer = () => {
                 bg={'gray.200'}
                 minH={300}
             >
-                <Flex className={styles['footer-content']} justify={'space-between'}>
+                <Flex
+                    className={styles['footer-content']}
+                    justify={'space-between'}
+                >
                     <Box className="logo-container">
                         <Heading
                             _hover={{ color: 'teal.400' }}
@@ -36,7 +39,12 @@ const Footer = () => {
                         </Text>
                     </Box>
                     <Box className="subscribe-form">
-                        <Text className="subtitle" mb={6} fontWeight={500}>
+                        <Text
+                            wordBreak={'normal'}
+                            className="subtitle"
+                            mb={6}
+                            fontWeight={500}
+                        >
                             Join our newsletter and never miss out on Latest
                             Updates.
                         </Text>
