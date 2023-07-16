@@ -15,7 +15,7 @@
     -webkit-text-fill-color: transparent;
 }
 .hero-inner {
-    /* margin-top: var(--navbar-height); */
+    margin-top: var(--navbar-height);
 }
 @media all and (max-width: 768px) {
     .hero-inner {
