@@ -25,12 +25,12 @@ const Hero = () => {
             >
                 <Flex
                     // height="100%"
-                    // alignItems="center"
+                 alignItems="center"
                     justifyContent="space-around"
                     className={styles['hero-inner']}
                     px={8}
                     mt={8}
-                    // py={8}
+                     py={8}
                 >
                     <Box maxW="md" color="white" mr={8} zIndex={3}>
                         <Heading
