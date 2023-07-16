@@ -15,7 +15,7 @@ import ImageDropArea from '../components/ImageDropArea';
 import Footer from '../components/Footer';
 import { Web3Storage } from 'web3.storage';
 import { ChangeEvent, ChangeEventHandler, FormEvent, useState } from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
 // Construct with token and endpoint
 const apiToken = process.env.NEXT_PUBLIC_WEB3_STORAGE_TOKEN as string;
 const client = new Web3Storage({ token: apiToken });
@@ -65,10 +65,10 @@ const CreatePage = () => {
             <Box
                 mt={'calc(2rem + var(--navbar-height))'}
                 maxW={800}
-                ml={'auto'}
-                mr={'auto'}
-                pt={8}
-                pb={8}
+              
+                mx={'auto'}
+                py={8}
+                px={4}
             >
                 <Heading textAlign={'center'} mt={8} mb={8}>
                     Create
